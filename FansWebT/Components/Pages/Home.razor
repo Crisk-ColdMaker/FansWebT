@@ -1,0 +1,59 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<MudContainer Class="mt-16 px-8" MaxWidth="MaxWidth.False">
+    <MudImage Src="images/HikiBackGround1.png" Class="page-background-container" Fluid="true" />
+    <MudStack AlignItems="AlignItems.Center">
+        <MudStack AlignItems="AlignItems.Center" Spacing="2" Class="mb-16">
+            <MudItem>
+                <MudAvatar Size="Size.Large">
+                    <MudImage Src="images/HikiIcon0.jpg" ObjectFit="ObjectFit.Cover"></MudImage>
+                </MudAvatar>
+            </MudItem>
+            <MudItem>
+                <MudText Typo="Typo.h3">Welcome Hiki Fans</MudText>
+            </MudItem>
+        </MudStack>
+        <MudGrid>
+            <MudItem xs="12" sm="6" md="4">
+                <MudLink Href="@TowerLink" Target="_blank">
+                    <MudImage Src="images/塔.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+                </MudLink>
+            </MudItem>
+            <MudItem xs="12" sm="6" md="4">
+                <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+            </MudItem>
+            <MudItem xs="12" sm="12" md="4">
+                <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+            </MudItem>
+@*             <MudItem xs="12" sm="6">
+                <MudGrid>
+                    <MudItem xs="12">
+                        <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+                    </MudItem>
+                    <MudItem xs="12">
+                        <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+                    </MudItem>
+                </MudGrid>
+            </MudItem>
+            <MudItem xs="12" sm="6">
+                <MudPaper Elevation="2" Class="pa-4" Style="height: 100%"></MudPaper>
+            </MudItem>
+            <MudItem xs="12" sm="6" md="4">
+                <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+            </MudItem>
+            <MudItem xs="12" sm="6" md="4">
+                <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+            </MudItem>
+            <MudItem xs="12" sm="12" md="4">
+                <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+            </MudItem> *@
+        </MudGrid>
+    </MudStack>
+</MudContainer>
+@code
+{
+    public string TowerLink = "https://www.bilibili.com/video/BV1z3411w7hX/?spm_id_from=333.999.0.0";
+
+}
