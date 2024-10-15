@@ -2,62 +2,111 @@
 
 <PageTitle>Home</PageTitle>
 
-<MudContainer Class="mt-16 px-8" MaxWidth="MaxWidth.False">
-    
-    <MudStack AlignItems="AlignItems.Center">
+<MudContainer Class="mt-8">
+    <MudStack Row="false" Justify="Justify.Center">
+        @*         <MudItem>
+        <MudText Typo="Typo.h3">Welcome Hiki Fans</MudText>
+        </MudItem> *@
+        <MudImage Class="custom-image" Src='images/HIkiBackground1.png'></MudImage>
+        <MudPaper Width="800px" Style="object-position:center;background-image: url('images/HIkiBackground1.png'); background-size: cover;">
+            @*                     <MudAvatar Size="Size.Large" Style="position:absolute; z-index:10; width:250px;height:auto; left:100px; bottom:400px;">
+            <MudImage Src="images/HikiIcon0.jpg" ObjectFit="ObjectFit.Cover"></MudImage>
+            </MudAvatar> *@
+            @*                     <MudText  Typo="Typo.h1" Style="position:absolute;left:890px; bottom:470px;">Welcome to</MudText>
+            <MudText Typo="Typo.h1" Style="position:absolute;left:250px; bottom:100px;">Hiki Fans</MudText> *@
+            @*                     <MudButton Variant="Variant.Filled" Color="Color.Secondary" Style="position:absolute; z-index:10; width:130px;height:60px; right:100px; bottom:200px;">Start!</MudButton> *@
+            <!-- 其他控件 -->
+            @*                     <p><Typewriter CustomClass="welcome-font" Builder="@typewriter" /></p>
+            <p><Typewriter CustomClass="custom-navlink" Builder="@typewriter2" /></p>
+            <p><Typewriter CustomClass="custom-navlink" Builder="@typewriter2" /></p>
+            <p><Typewriter CustomClass="custom-navlink" Builder="@typewriter" /></p>
+            <p><Typewriter CustomClass="custom-navlink" Builder="@typewriter" /></p>
+            <p><Typewriter CustomClass="custom-navlink" Builder="@typewriter2" /></p> *@
+        </MudPaper>
+        <MudGrid Style="width:100%;">
+            <MudItem xs="2" sm="0" />
+            <MudItem xs="1" sm="1" />
+            <MudItem xs="4" sm="1">
+                
+            </MudItem>
+            <MudItem xs="1" sm="1" />
+            <MudItem xs="2" sm="0" />
+        </MudGrid>
         <MudStack AlignItems="AlignItems.Center" Spacing="2" Class="mb-14">
-            <MudItem>
-                <MudAvatar Size="Size.Large">
-                    <MudImage Src="images/HikiIcon0.jpg" ObjectFit="ObjectFit.Cover"></MudImage>
-                </MudAvatar>
-            </MudItem>
-            <MudItem>
-                <MudText Typo="Typo.h3">Welcome Hiki Fans</MudText>
-            </MudItem>
+            @*             <MudItem>
+            <MudAvatar Size="Size.Large">
+            <MudImage Src="images/HikiIcon0.jpg" ObjectFit="ObjectFit.Cover"></MudImage>
+            </MudAvatar>
+            </MudItem> *@
+
         </MudStack>
         <MudGrid>
             <MudItem xs="12" sm="6" md="4">
                 <MudLink Href="@TowerLink" Target="_blank">
-                    <MudImage Src="images/塔.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+
                 </MudLink>
             </MudItem>
-@*             <MudItem xs="12" sm="6" md="4">
-                <MudLink Href="@TowerLink" Target="_blank">
-                    <MudImage Src="images/round2.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
-                </MudLink>
+            @*             <MudItem xs="12" sm="6" md="4">
+            <MudLink Href="@TowerLink" Target="_blank">
+            <MudImage Src="images/round2.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+            </MudLink>
             </MudItem>
             <MudItem xs="12" sm="12" md="4">
-                <MudLink Href="@TowerLink" Target="_blank">
-                    <MudImage Src="images/三笠.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
-                </MudLink>
+            <MudLink Href="@TowerLink" Target="_blank">
+            <MudImage Src="images/三笠.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+            </MudLink>
             </MudItem> *@
-            <MudItem xs="12" sm="6">
-                <MudGrid>
-                    <MudItem xs="12">
-                        <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
-                    </MudItem>
-                    <MudItem xs="12">
-                        <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
-                    </MudItem>
-                </MudGrid>
+            @*             <MudItem xs="12" sm="6">
+            <MudGrid>
+            <MudItem xs="12">
+            <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+            </MudItem>
+            <MudItem xs="12">
+            <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+            </MudItem>
+            </MudGrid>
             </MudItem>
             <MudItem xs="12" sm="6">
-                <MudPaper Elevation="2" Class="pa-4" Style="height: 100%"></MudPaper>
+            <MudPaper Elevation="2" Class="pa-4" Style="height: 100%"></MudPaper>
             </MudItem>
             <MudItem xs="12" sm="6" md="4">
-                <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+            <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
             </MudItem>
             <MudItem xs="12" sm="6" md="4">
-                <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+            <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
             </MudItem>
             <MudItem xs="12" sm="12" md="4">
-                <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
-            </MudItem>
+            <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+            </MudItem> *@
         </MudGrid>
     </MudStack>
 </MudContainer>
 @code
 {
+    TypewriterBuilder typewriter = new TypewriterBuilder(defaultCharacterPause: 6)
+    .TypeString("First line... Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+    .Pause(1000)
+    .DeleteAll()
+    .TypeString("Second line... Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 50)
+    .Pause(500)
+    .DeleteAll(30)
+    .TypeString("Third line... Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 20)
+    .Pause(500)
+    .DeleteAll(20)
+    .Pause(500)
+    .Loop();
+    TypewriterBuilder typewriter2 = new TypewriterBuilder(defaultCharacterPause: 6)
+    .TypeString("First line... Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+    .Pause(500)
+    .DeleteAll()
+    .TypeString("Second line... Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 50)
+    .Pause(300)
+    .DeleteAll(10)
+    .TypeString("Third line... Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 20)
+    .Pause(50)
+    .DeleteAll(20)
+    .Pause(50)
+    .Loop();
     public string TowerLink = "https://www.bilibili.com/video/BV1z3411w7hX/?spm_id_from=333.999.0.0";
 
 }

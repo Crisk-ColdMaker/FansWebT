@@ -2,11 +2,47 @@
 
 <PageTitle>直播记录</PageTitle>
 
-<MudText Typo="Typo.h3" GutterBottom="true">Counter</MudText>
-
-<MudText Typo="Typo.body1" Class="mb-4">Current count: @currentCount</MudText>
-
-<MudButton Color="Color.Primary" Variant="Variant.Filled" @onclick="IncrementCount">Click me</MudButton>
+<MudContainer Class="mt-16 px-8" MaxWidth="MaxWidth.False">
+    <MudStack AlignItems="AlignItems.Center">
+@*         <MudStack AlignItems="AlignItems.Center" Spacing="2" Class="mb-14">
+            <MudItem>
+                <MudAvatar Size="Size.Large">
+                    <MudImage Src="images/HikiIcon0.jpg" ObjectFit="ObjectFit.Cover"></MudImage>
+                </MudAvatar>
+            </MudItem>
+            <MudItem>
+                <MudText Typo="Typo.h3">Welcome Hiki Fans</MudText>
+            </MudItem>
+        </MudStack> *@
+        <MudGrid>
+            <MudItem xs="12" sm="6" md="4">
+                <MudLink Href="" Target="_blank">
+                    <MudImage Src="images/塔.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+                </MudLink>
+            </MudItem>
+            <MudItem xs="12" sm="6" md="4">
+                <MudLink Href="" Target="_blank">
+                    <MudImage Src="images/塔.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+                </MudLink>
+            </MudItem>
+            <MudItem xs="12" sm="6" md="4">
+                <MudLink Href="" Target="_blank">
+                    <MudImage Src="images/塔.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+                </MudLink>
+            </MudItem>
+            <MudItem xs="12" sm="6" md="4">
+                <MudLink Href="" Target="_blank">
+                    <MudImage Src="images/塔.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+                </MudLink>
+            </MudItem>
+            <MudItem xs="12" sm="6" md="4">
+                <MudLink Href="" Target="_blank">
+                    <MudImage Src="images/塔.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+                </MudLink>
+            </MudItem>
+        </MudGrid>
+    </MudStack>
+</MudContainer>
 
 @code {
     private int currentCount = 0;

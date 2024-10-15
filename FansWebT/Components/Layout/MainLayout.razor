@@ -4,28 +4,42 @@
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
+<div class="frosted-glass"></div>
+<MudImage Src="images/HikiBackGround1.png" Class="page-background-container" Fluid="true" />
 
 <MudLayout>
-    <MudAppBar Elevation="1" Color="Color.Transparent" Fixed="true">
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <MudLink Href="https://space.bilibili.com/277854028" Target="_blank">
+    <MudAppBar Elevation="0" Color="Color.Inherit" Fixed="true" Class="tab-midset">
+        @*  *@
+
+        <MudLink Style="object-position:left" Href="https://space.bilibili.com/277854028" Target="_blank">
             <MudAvatar Size="Size.Medium">
                 <MudImage Src="images/HikiIcon2.jpg" ObjectFit="ObjectFit.Cover"></MudImage>
             </MudAvatar>
         </MudLink>
-        <MudText Typo="Typo.h5" Class="ml-3">HikiFans</MudText>
+        <MudText Typo="Typo.h3" Class="ml-3 tab-font">HikiFans</MudText>
+        <MudSpacer />
+        <MudTabs Rounded="true" Style="width:auto;">
+            <MudTabPanel Class="tab-font" Text="Home" OnClick="@(() => NavigateTo("/"))">
+
+            </MudTabPanel>
+            <MudTabPanel Class="tab-font" Text="Tab One" OnClick="@(() => NavigateTo("/counter"))">
+
+            </MudTabPanel>
+            <MudTabPanel Class="tab-font" Text="Tab One" OnClick="@(() => NavigateTo("/weather"))">
+
+            </MudTabPanel>
+        </MudTabs>
         <MudSpacer />
         <MudIconButton Icon="@(DarkLightModeButtonIcon)" Color="Color.Inherit" OnClick="@DarkModeToggle" />
         <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
+
     </MudAppBar>
-    <MudImage Src="images/HikiBackGround1.png" Class="page-background-container" Fluid="true" />
-    <MudDrawer Color="Color.Transparent" @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="1">
-        <NavMenu />
-    </MudDrawer>
-    <MudMainContent Class="mt-16 pa-4">
+    <MudMainContent>
         @Body
     </MudMainContent>
 </MudLayout>
+
+
 
 
 <div id="blazor-error-ui">
@@ -35,20 +49,35 @@
 </div>
 
 @code {
-    private bool _drawerOpen = true;
+    private bool _drawerOpen = false;
     private bool _isDarkMode = true;
     private MudTheme? _theme = null;
+    private int currentIndex;
 
+    private void HandleTabChange(int index)
+    {
+        currentIndex = index;
+        var url = index == 0 ? "/page1" : "/page2";
+    }
     protected override void OnInitialized()
     {
         base.OnInitialized();
-
         _theme = new()
-        {
-            PaletteLight = _lightPalette,
-            PaletteDark = _darkPalette,
-            LayoutProperties = new LayoutProperties()
-        };
+            {
+                PaletteLight = _lightPalette,
+                PaletteDark = _darkPalette,
+                LayoutProperties = new LayoutProperties()
+            };
+    }
+    private int activePanelIndex = 0;
+
+    private void NavigateTo(string url)
+    {
+        NavigationManager!.NavigateTo(url);
+    }
+    private void NavigateToHome()
+    {
+        NavigationManager.NavigateTo("/counter");
     }
 
 
@@ -62,44 +91,51 @@
         _isDarkMode = !_isDarkMode;
     }
 
-    private readonly PaletteLight _lightPalette = new()
+    [Inject]
+    private NavigationManager? NavigationManager
     {
-        Black = "#110e2d",
-        AppbarText = "#424242",
-        AppbarBackground = "rgba(255,255,255,0.8)",
-        DrawerBackground = "#ffffff",
-        GrayLight = "#e8e8e8",
-        GrayLighter = "#f9f9f9",
-    };
+        get; set;
+    }
+
+    private readonly PaletteLight _lightPalette = new()
+        {
+            Black = "#110e2d",
+            Secondary = "#cc96f9",
+            AppbarText = "#424242",
+            AppbarBackground = "rgba(255,255,255,0.8)",
+            DrawerBackground = "#ffffff",
+            GrayLight = "#e8e8e8",
+            GrayLighter = "#f9f9f9",
+        };
 
     private readonly PaletteDark _darkPalette = new()
-    {
-        Primary = "#7e6fff",
-        Surface = "#1e1e2d",
-        Background = "#1a1a27",
-        BackgroundGray = "#151521",
-        AppbarText = "#92929f",
-        AppbarBackground = "rgba(26,26,39,0.8)",
-        DrawerBackground = "#1a1a27",
-        ActionDefault = "#74718e",
-        ActionDisabled = "#9999994d",
-        ActionDisabledBackground = "#605f6d4d",
-        TextPrimary = "#b2b0bf",
-        TextSecondary = "#92929f",
-        TextDisabled = "#ffffff33",
-        DrawerIcon = "#92929f",
-        DrawerText = "#92929f",
-        GrayLight = "#2a2833",
-        GrayLighter = "#1e1e2d",
-        Info = "#4a86ff",
-        Success = "#3dcb6c",
-        Warning = "#ffb545",
-        Error = "#ff3f5f",
-        LinesDefault = "#33323e",
-        TableLines = "#33323e",
-        Divider = "#292838",
-        OverlayLight = "#1e1e2d80",
-    };
+        {
+            Primary = "#f9f3b7",
+            Surface = "#1e1e2d",
+            Background = "#1a1a27",
+            BackgroundGray = "#151521",
+            AppbarText = "#92929f",
+            AppbarBackground = "rgba(26,26,39,0.8)",
+            DrawerBackground = "#1a1a27",
+            ActionDefault = "#74718e",
+            ActionDisabled = "#9999994d",
+            ActionDisabledBackground = "#605f6d4d",
+            TextPrimary = "#b2b0bf",
+            TextSecondary = "#92929f",
+            TextDisabled = "#ffffff33",
+            DrawerIcon = "#92929f",
+            DrawerText = "#92929f",
+            GrayLight = "#2a2833",
+            GrayLighter = "#1e1e2d",
+            Info = "#4a86ff",
+            Success = "#3dcb6c",
+            Warning = "#ffb545",
+            Error = "#ff3f5f",
+            LinesDefault = "#33323e",
+            TableLines = "#33323e",
+            Divider = "#292838",
+            OverlayLight = "#1e1e2d80",
+        };
 
     public string DarkLightModeButtonIcon => _isDarkMode switch
     {
