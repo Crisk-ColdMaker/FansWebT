@@ -1,112 +1,146 @@
-﻿@page "/"
+﻿@page "/home"
 
-<PageTitle>Home</PageTitle>
-
-<MudContainer Class="mt-8">
-    <MudStack Row="false" Justify="Justify.Center">
-        @*         <MudItem>
+<MudContainer Class="mt-16 px-8" MaxWidth="MaxWidth.False">
+    <MudStack AlignItems="AlignItems.Center">
+        @*         <MudStack AlignItems="AlignItems.Center" Spacing="2" Class="mb-14">
+        <MudItem>
+        <MudAvatar Size="Size.Large">
+        <MudImage Src="images/HikiIcon0.jpg" ObjectFit="ObjectFit.Cover"></MudImage>
+        </MudAvatar>
+        </MudItem>
+        <MudItem>
         <MudText Typo="Typo.h3">Welcome Hiki Fans</MudText>
-        </MudItem> *@
-        <MudImage Class="custom-image" Src='images/HIkiBackground1.png'></MudImage>
-        <MudPaper Width="800px" Style="object-position:center;background-image: url('images/HIkiBackground1.png'); background-size: cover;">
-            @*                     <MudAvatar Size="Size.Large" Style="position:absolute; z-index:10; width:250px;height:auto; left:100px; bottom:400px;">
-            <MudImage Src="images/HikiIcon0.jpg" ObjectFit="ObjectFit.Cover"></MudImage>
-            </MudAvatar> *@
-            @*                     <MudText  Typo="Typo.h1" Style="position:absolute;left:890px; bottom:470px;">Welcome to</MudText>
-            <MudText Typo="Typo.h1" Style="position:absolute;left:250px; bottom:100px;">Hiki Fans</MudText> *@
-            @*                     <MudButton Variant="Variant.Filled" Color="Color.Secondary" Style="position:absolute; z-index:10; width:130px;height:60px; right:100px; bottom:200px;">Start!</MudButton> *@
-            <!-- 其他控件 -->
-            @*                     <p><Typewriter CustomClass="welcome-font" Builder="@typewriter" /></p>
-            <p><Typewriter CustomClass="custom-navlink" Builder="@typewriter2" /></p>
-            <p><Typewriter CustomClass="custom-navlink" Builder="@typewriter2" /></p>
-            <p><Typewriter CustomClass="custom-navlink" Builder="@typewriter" /></p>
-            <p><Typewriter CustomClass="custom-navlink" Builder="@typewriter" /></p>
-            <p><Typewriter CustomClass="custom-navlink" Builder="@typewriter2" /></p> *@
-        </MudPaper>
-        <MudGrid Style="width:100%;">
-            <MudItem xs="2" sm="0" />
-            <MudItem xs="1" sm="1" />
-            <MudItem xs="4" sm="1">
-                
-            </MudItem>
-            <MudItem xs="1" sm="1" />
-            <MudItem xs="2" sm="0" />
-        </MudGrid>
-        <MudStack AlignItems="AlignItems.Center" Spacing="2" Class="mb-14">
-            @*             <MudItem>
-            <MudAvatar Size="Size.Large">
-            <MudImage Src="images/HikiIcon0.jpg" ObjectFit="ObjectFit.Cover"></MudImage>
-            </MudAvatar>
-            </MudItem> *@
-
-        </MudStack>
+        </MudItem>
+        </MudStack> *@
         <MudGrid>
             <MudItem xs="12" sm="6" md="4">
-                <MudLink Href="@TowerLink" Target="_blank">
-
+                <MudLink Href="" Target="_blank">
+                    <MudImage Src="images/塔.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
                 </MudLink>
             </MudItem>
-            @*             <MudItem xs="12" sm="6" md="4">
-            <MudLink Href="@TowerLink" Target="_blank">
-            <MudImage Src="images/round2.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
-            </MudLink>
-            </MudItem>
-            <MudItem xs="12" sm="12" md="4">
-            <MudLink Href="@TowerLink" Target="_blank">
-            <MudImage Src="images/三笠.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
-            </MudLink>
-            </MudItem> *@
-            @*             <MudItem xs="12" sm="6">
-            <MudGrid>
-            <MudItem xs="12">
-            <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
-            </MudItem>
-            <MudItem xs="12">
-            <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
-            </MudItem>
-            </MudGrid>
-            </MudItem>
-            <MudItem xs="12" sm="6">
-            <MudPaper Elevation="2" Class="pa-4" Style="height: 100%"></MudPaper>
+            <MudItem xs="12" sm="6" md="4">
+                <MudLink Href="" Target="_blank">
+                    <MudImage Src="images/塔.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+                </MudLink>
             </MudItem>
             <MudItem xs="12" sm="6" md="4">
-            <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+                <MudLink Href="" Target="_blank">
+                    <MudImage Src="images/塔.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+                </MudLink>
             </MudItem>
             <MudItem xs="12" sm="6" md="4">
-            <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
+                <MudLink Href="" Target="_blank">
+                    <MudImage Src="images/塔.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+                </MudLink>
             </MudItem>
-            <MudItem xs="12" sm="12" md="4">
-            <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
-            </MudItem> *@
+            <MudItem xs="12" sm="6" md="4">
+                <MudLink Href="" Target="_blank">
+                    <MudImage Src="images/塔.jpg" ObjectFit="ObjectFit.Cover" Class="custom-image"></MudImage>
+                </MudLink>
+            </MudItem>
         </MudGrid>
     </MudStack>
 </MudContainer>
-@code
-{
-    TypewriterBuilder typewriter = new TypewriterBuilder(defaultCharacterPause: 6)
-    .TypeString("First line... Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
-    .Pause(1000)
-    .DeleteAll()
-    .TypeString("Second line... Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 50)
-    .Pause(500)
-    .DeleteAll(30)
-    .TypeString("Third line... Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 20)
-    .Pause(500)
-    .DeleteAll(20)
-    .Pause(500)
-    .Loop();
-    TypewriterBuilder typewriter2 = new TypewriterBuilder(defaultCharacterPause: 6)
-    .TypeString("First line... Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
-    .Pause(500)
-    .DeleteAll()
-    .TypeString("Second line... Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 50)
-    .Pause(300)
-    .DeleteAll(10)
-    .TypeString("Third line... Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 20)
-    .Pause(50)
-    .DeleteAll(20)
-    .Pause(50)
-    .Loop();
-    public string TowerLink = "https://www.bilibili.com/video/BV1z3411w7hX/?spm_id_from=333.999.0.0";
 
+
+
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
+@code {
+    private bool _isinwelcome = true;
+    private bool _drawerOpen = false;
+    private bool _isDarkMode = true;
+    private MudTheme? _theme = null;
+    private int currentIndex;
+
+    private void HandleTabChange(int index)
+    {
+        currentIndex = index;
+        var url = index == 0 ? "/page1" : "/page2";
+    }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _theme = new()
+            {
+                PaletteLight = _lightPalette,
+                PaletteDark = _darkPalette,
+                LayoutProperties = new LayoutProperties()
+            };
+    }
+    private int activePanelIndex = 0;
+
+    private void NavigateTo(string url)
+    {
+        NavigationManager!.NavigateTo(url);
+    }
+
+
+
+    private void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+
+    private void DarkModeToggle()
+    {
+        _isDarkMode = !_isDarkMode;
+    }
+
+    [Inject]
+    private NavigationManager? NavigationManager
+    {
+        get; set;
+    }
+
+    private readonly PaletteLight _lightPalette = new()
+        {
+            Black = "#110e2d",
+            Secondary = "#cc96f9",
+            AppbarText = "#424242",
+            AppbarBackground = "rgba(255,255,255,0.8)",
+            DrawerBackground = "#ffffff",
+            GrayLight = "#e8e8e8",
+            GrayLighter = "#f9f9f9",
+        };
+
+    private readonly PaletteDark _darkPalette = new()
+        {
+            Primary = "#f9f3b7",
+            Surface = "#1e1e2d",
+            Background = "#1a1a27",
+            BackgroundGray = "#151521",
+            AppbarText = "#92929f",
+            AppbarBackground = "rgba(26,26,39,0.8)",
+            DrawerBackground = "#1a1a27",
+            ActionDefault = "#74718e",
+            ActionDisabled = "#9999994d",
+            ActionDisabledBackground = "#605f6d4d",
+            TextPrimary = "#b2b0bf",
+            TextSecondary = "#92929f",
+            TextDisabled = "#ffffff33",
+            DrawerIcon = "#92929f",
+            DrawerText = "#92929f",
+            GrayLight = "#2a2833",
+            GrayLighter = "#1e1e2d",
+            Info = "#4a86ff",
+            Success = "#3dcb6c",
+            Warning = "#ffb545",
+            Error = "#ff3f5f",
+            LinesDefault = "#33323e",
+            TableLines = "#33323e",
+            Divider = "#292838",
+            OverlayLight = "#1e1e2d80",
+        };
+
+    public string DarkLightModeButtonIcon => _isDarkMode switch
+    {
+        true => Icons.Material.Rounded.AutoMode,
+        false => Icons.Material.Outlined.DarkMode,
+    };
 }

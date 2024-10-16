@@ -1,0 +1,81 @@
+﻿html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body, .main-container {
+    height: 100vh; /* 确保容器高度为一个视口高度 */
+    /*overflow: hidden;*/ /* 防止出现滚动条 */
+}
+
+.page-background-container {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh; /* 确保图片高度为一个视口高度 */
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.page-welcomeimg {
+    width: 100vw;
+    min-height: 100vh; /* 使图片高度占满视口 */
+    object-fit: cover; /* 保持裁剪效果 */
+}
+
+
+
+.mid-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.arrow-container {
+    position: absolute;
+    bottom: 20px; /* 距离底部的间距 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    border: solid #d8cbc2;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    animation: bounce 2s infinite;
+    cursor: pointer; /* 让鼠标悬停在箭头上时变成手的形状 */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    40% {
+        transform: translateY(-10px) rotate(45deg);
+    }
+
+    60% {
+        transform: translateY(-5px) rotate(45deg);
+    }
+}

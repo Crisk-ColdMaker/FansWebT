@@ -1,0 +1,15 @@
+﻿<div class="typing-container">
+    <Typewriter CustomClass="gradient-text" Builder="@typewriterBuilder" />
+</div>
+
+
+@code {
+    private TypewriterBuilder? typewriterBuilder;
+
+    protected override void OnInitialized()
+    {
+        typewriterBuilder = new TypewriterBuilder()
+            .TypeString("欢迎来到空无一人的世界")
+            .Pause(2500);
+    }
+}

@@ -1,0 +1,6 @@
+﻿.gradient-text {
+    font-family: 'XYBER', sans-serif;
+    font-size: 50px; /* 自定义字体大小 */
+    color: #f2f2f2; /* 自定义字体颜色 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}

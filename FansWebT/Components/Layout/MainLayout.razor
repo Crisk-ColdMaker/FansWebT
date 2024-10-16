@@ -4,39 +4,48 @@
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
+
 <div class="frosted-glass"></div>
-<MudImage Src="images/HikiBackGround1.png" Class="page-background-container" Fluid="true" />
-
+<img src="images/HikiBackGround1.png" class="page-background-container" />
 <MudLayout>
-    <MudAppBar Elevation="0" Color="Color.Inherit" Fixed="true" Class="tab-midset">
-        @*  *@
+    @if (!IsWelcomePage)
+    {
+        <MudAppBar Elevation="0" Color="Color.Inherit" Fixed="true">
+            <div class="tab-midset">
+                <div class="flex-container align-center">
+                    <MudLink Href="https://space.bilibili.com/277854028" Target="_blank">
+                        <MudAvatar Size="Size.Medium">
+                            <MudImage Src="images/HikiIcon2.jpg" ObjectFit="ObjectFit.Cover"></MudImage>
+                        </MudAvatar>
+                    </MudLink>
+                    <div class="ml-3" style="cursor:pointer" onclick="@NavigateToWelcome">
+                        <MudText Typo="Typo.h4" Class="tab-font">HikiFans</MudText>
+                    </div>
+                </div>
+                <div class="flex-container align-center">
+                    <MudTabs Rounded="true" Class="center-tabs" ActivePanelIndex="-1">
+                        <MudTabPanel Class="tab-font" Text="Home" OnClick="@(() => NavigateTo("/home"))"></MudTabPanel>
+                        <MudTabPanel Class="tab-font" Text="Tab One" OnClick="@(() => NavigateTo("/counter"))"></MudTabPanel>
+                        <MudTabPanel Class="tab-font" Text="Tab One" OnClick="@(() => NavigateTo("/weather"))"></MudTabPanel>
+                    </MudTabs>
+                </div>
+                <div class="flex-container align-center">
+                    <MudIconButton Icon="@(DarkLightModeButtonIcon)" Color="Color.Inherit" OnClick="@DarkModeToggle" />
+                    <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
+                </div>
+            </div>
+        </MudAppBar>
+        <MudMainContent>
+            @Body
+        </MudMainContent>
+    }
+    else
+    {
+        <div>
+            @Body
+        </div>
+    }
 
-        <MudLink Style="object-position:left" Href="https://space.bilibili.com/277854028" Target="_blank">
-            <MudAvatar Size="Size.Medium">
-                <MudImage Src="images/HikiIcon2.jpg" ObjectFit="ObjectFit.Cover"></MudImage>
-            </MudAvatar>
-        </MudLink>
-        <MudText Typo="Typo.h3" Class="ml-3 tab-font">HikiFans</MudText>
-        <MudSpacer />
-        <MudTabs Rounded="true" Style="width:auto;">
-            <MudTabPanel Class="tab-font" Text="Home" OnClick="@(() => NavigateTo("/"))">
-
-            </MudTabPanel>
-            <MudTabPanel Class="tab-font" Text="Tab One" OnClick="@(() => NavigateTo("/counter"))">
-
-            </MudTabPanel>
-            <MudTabPanel Class="tab-font" Text="Tab One" OnClick="@(() => NavigateTo("/weather"))">
-
-            </MudTabPanel>
-        </MudTabs>
-        <MudSpacer />
-        <MudIconButton Icon="@(DarkLightModeButtonIcon)" Color="Color.Inherit" OnClick="@DarkModeToggle" />
-        <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
-
-    </MudAppBar>
-    <MudMainContent>
-        @Body
-    </MudMainContent>
 </MudLayout>
 
 
@@ -49,10 +58,12 @@
 </div>
 
 @code {
+    private bool _isinwelcome = true;
     private bool _drawerOpen = false;
     private bool _isDarkMode = true;
     private MudTheme? _theme = null;
     private int currentIndex;
+    private bool IsWelcomePage => NavigationManager.Uri.EndsWith("/");
 
     private void HandleTabChange(int index)
     {
@@ -75,9 +86,9 @@
     {
         NavigationManager!.NavigateTo(url);
     }
-    private void NavigateToHome()
+    private void NavigateToWelcome()
     {
-        NavigationManager.NavigateTo("/counter");
+        NavigationManager!.NavigateTo("/");
     }
 
 

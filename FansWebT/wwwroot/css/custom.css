@@ -1,25 +1,31 @@
 ﻿/* custom.css */
 
 
-
 .custom-image {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.gif-image {
-    max-width: 100%;
-    height: auto;
-}
-.tab-midset{
-    display:grid;
-    grid-template-columns:1fr 5fr 1fr;
+
+.tab-midset {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr 8fr 1fr;
 }
 
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 确保内容垂直居中 */
+}
 
-.custom-navlink {
-    font-family: 'Comic Neue';
+.center-tabs {
+    width: max-content; /* 确保Tabs仅占据必要空间 */
+}
+
+.tab-font {
+    font-family: 'Comic Neue', sans-serif !important;
     font-size: 18px; /* 自定义字体大小 */
 }
 
@@ -49,7 +55,7 @@
 }
 .page-background-container {
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: center;
     height: 100%;
     width: 100vw;
@@ -59,6 +65,7 @@
     left: 0;
     z-index: -1;
 }
+
 .content {
     display: flex;
     justify-content: center;
@@ -75,37 +82,14 @@
     flex: 1; /* 左右部分各占1份 */
 }
 
-.center {
-    flex: 8; /* 中间部分占5份 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.no-appbar-layout .mud-layout {
+    padding-top: 0; /* 取消顶部的空白 */
 }
 
-.appbar-content {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 15%; /* 留出左右空白区域 */
-    width: 70%; /* 中间内容占用60%的宽度 */
+.default-layout .mud-layout {
+    padding-top: 64px; /* 或者 AppBar 的高度 */
 }
 
-/* custom.css */
-.navlink-container {
-    display: flex;
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-    border-radius: 8px;
-    /*height: 100%;*/ /* 确保高度 */
-    /*width: 100%;*/ /* 确保宽度 */
-}
 
-    .navlink-container:hover {
-        background-color: #f0f0f0; /* 鼠标悬浮样式 */
-    }
-
-    .navlink-container.selected {
-        background-color: #d0d0d0; /* 选中样式 */
-        font-weight: bold; /* 选中样式字体加粗 */
-    }
 
 
